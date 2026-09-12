@@ -93,6 +93,8 @@ def test_finding_category_injection():
 
 def test_finding_category_secrets_for_credentials():
     assert _finding_category("hardcoded-api-credential") == "secrets"
+    assert _finding_category("hardcoded-aws-access-key-id") == "secrets"
+    assert _finding_category("hardcoded-github-token") == "secrets"
 
 
 def test_trivy_target_empty(tmp_path):
